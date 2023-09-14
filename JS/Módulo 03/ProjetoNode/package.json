@@ -1,0 +1,15 @@
+{
+  "name": "projetonode",
+  "version": "1.0.0",
+  "description": "Projeto Node para o Exercicio 1 do módulo 3 de JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Projeto",
+    "Node.js"
+  ],
+  "author": "Thiago Jomar",
+  "license": "ISC"
+}
