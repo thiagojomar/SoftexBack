@@ -30,6 +30,7 @@ class Banco{
     
 //Criando Conta
 var usuario = new Banco();
+window.alert("Bem vindo ao Banco JOMAR\nInciando o Sistema de Criação de Contas.")
 usuario.nome = prompt("Informe seu nome completo:");
 usuario.conta = Number(prompt("Informe a número da sua conta com 6 digitos: "));
 usuario.agencia = Number(prompt("Informe o número da sua agência com 4 digitos: "));
@@ -38,7 +39,7 @@ usuario.saldo = parseFloat(prompt("Qual o valor do depósito incial: "));
 
 window.alert(`Bem Vindo ao nosso Banco\n ${usuario.nome}\n sua conta foi criada com sucesso.`);
 console.log(usuario)
-var op = Number(prompt(`Dados da Conta.\n\t Ag: ${usuario.agencia}\n\t Conta: ${usuario.conta}\n\t Tipo de Conta: ${usuario.tipoConta}\n\t Saldo: ${usuario.saldo}\nDeseja Realizar alguma operação? (1 - Sim | 2 - Não)`));
+var op = Number(prompt(`Dados da Conta.\n\t Ag: ${usuario.agencia}\n\t Conta: ${usuario.conta}\n\t Tipo de Conta: ${usuario.tipoConta}\n\t Saldo: ${usuario.saldo}\nDeseja Realizar alguma operação?\n (1 - Sim | 2 - Não)`));
 if (op === 1) {
     
     do {
