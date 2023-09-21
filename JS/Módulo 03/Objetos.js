@@ -60,6 +60,7 @@ if (op === 1) {
             case 3:
                 valor = parseFloat(prompt("Informe o Valor que você deseja sacar: "));
                 usuario.saque(valor);
+                console.log(`Você fez um saque de ${valor} e seu Saldo Atual é de ${usuario.saldo}`);   
                 break;
             
             case 4:
