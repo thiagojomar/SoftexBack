@@ -12,15 +12,17 @@ class Banco{
     }
     //depósito
     deposito(valor){
+        console.log(`Saldo Antigo: ${this.saldo}.`);
        let novoSaldo =  this.saldo += valor;
        this.saldo = novoSaldo;
-       console.log(`Saldo: ${this.saldo}`);
+       console.log(`Saldo Atual: ${this.saldo}`);
     }
     //saque
     saque(valor){ 
+        console.log(`Saldo Antigo: ${this.saldo}.`);
         let novoSaldo = this.saldo -= valor;
         this.saldo = novoSaldo;
-        console.log(`Saldo: ${this.saldo}`);
+        console.log(`Saldo Atual: ${this.saldo}`);
     }
     //numero da conta
     numConta(){
@@ -52,6 +54,7 @@ if (op === 1) {
             case 2:
                 valor = parseFloat(prompt("Informe o Valor que você deseja depositar: "));
                 usuario.deposito(valor);
+                console.log(`Você fez um depósito de ${valor} e seu Saldo Atual é de ${usuario.saldo}`)
                 break;
             
             case 3:
