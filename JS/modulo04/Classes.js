@@ -1,10 +1,30 @@
-//MOTO
-class MOTO {
-    constructor(marca, modelo, ano, cor) {
+//VEICULO
+class veiculo {
+    constructor(marca, modelo, ano) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
+        if (new.target === veiculo) {
+            throw new Error("Classe abstrata, não é possivel instanciar.")
+        }
+    }
+    acelerar(){
+        throw new Error("Método precisa ser implementado.");
+    }
+    frear(){
+        throw new Error("Método precisa ser implementado.");
+    }
+    buzinar(){
+        throw new Error("Método precisa ser implementado.");
+    }
+}
+
+//MOTO
+class MOTO extends veiculo {
+    constructor(marca, modelo, ano, cor, cilindrada) {
+        super(marca, modelo, ano)
         this.cor = cor;
+        this.cilindrada = cilindrada;
         this.velocidade = 0;
     }
     //ACELERAR
@@ -35,18 +55,36 @@ class MOTO {
 
 }
 
-var motoca = new MOTO('Honda', 'CB300', 2024, 'Preta');
+var motoca = new MOTO('Honda', 'CB', 2024, 'Preta', 500);
 console.log(motoca);
 motoca.acelerar(100);
 motoca.frear();
 motoca.buzinar();
 
-//CELULAR
-class celular {
-    constructor(marca, modelo, cor, plano, camera) {
+//TELEFONE
+class telefone{
+    constructor(marca, modelo, cor){
         this.marca = marca;
         this.modelo = modelo;
         this.cor = cor;
+        if(new.target === telefone){
+            throw new Error("Classe abstrata, não é possivel instanciar.")
+        }
+    }
+    tirarFoto() {
+        throw new Error("Método precisa ser implementado.");
+    }
+    efetuarChamada() {
+        throw new Error("Método precisa ser implementado.");
+    }
+    comprarCredito() {
+        throw new Error("Método precisa ser implementado.");
+    }
+}
+//CELULAR
+class celular extends telefone {
+    constructor(marca, modelo, cor, plano, camera) {
+        super(marca, modelo, cor)
         this.plano = plano;
         this.camera = camera;
         this.credito = 0;
@@ -96,4 +134,5 @@ celular2.tirarFoto();
 celular2.efetuarChamada();
 celular2.comprarCredito(100);
 
-//
+//var porsante = new veiculo("BMW", "X6", 2025);
+var orelhao = new telefone("Telemar", "Orelhão", "Azul");
