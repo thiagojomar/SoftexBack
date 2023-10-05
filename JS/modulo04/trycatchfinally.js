@@ -1,4 +1,4 @@
-console.log("VAMOS DIVIDIR DOIS NÚMEROS INTEIROS?");
+window.alert("VAMOS DIVIDIR DOIS NÚMEROS INTEIROS?");
 do {
     let num1 = parseInt(prompt("Digite o primeiro número: "));
     let num2 = parseInt(prompt("Digite o segundo número: "));
