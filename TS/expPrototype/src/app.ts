@@ -27,8 +27,8 @@ listaVeiculos.push(cloneMoto2);
 
 console.log(listaVeiculos);
 
-//console.table(listaVeiculos);
+console.table(listaVeiculos);
 
-listaVeiculos.forEach(element => {
-    console.log(element.toString());
-});
+//listaVeiculos.forEach(element => {
+//    console.log(element.toString());
+//});
