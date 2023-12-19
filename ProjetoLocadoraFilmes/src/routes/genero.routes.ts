@@ -1,6 +1,6 @@
-import { Router, Request, Response } from "express";
+import { Router } from "express";
 import GeneroController from "../controllers/genero.controller";
-//import { welcome } from "../controllers/home.controller";
+
 
 class GeneroRoutes {
   router = Router();
@@ -9,15 +9,26 @@ class GeneroRoutes {
   constructor() {
     this.intializeRoutes();
   }
-  
+
   intializeRoutes() {
 
-    //Create novo Genero
+    // Criar um novo genero.
     this.router.post("/genero", this.controller.create);
 
-    //Retornar os Generos ja cadastrados
+    // Retornar os generos já cadastrados.
     this.router.get("/generos", this.controller.findAll);
-   
+
+    // Retorna um genero específico pelo seu id
+    this.router.get("/genero/:id", this.controller.findOne);
+
+    // Atualizar um genero pelo seu id
+    this.router.put("/genero/:id", this.controller.update);
+
+    // Deleta um genero pelo seu id
+    this.router.delete("/genero/:id", this.controller.delete);
+
+    // Deleta todos os generos
+    this.router.delete("/generos/", this.controller.deleteAll);
   }
 }
 
