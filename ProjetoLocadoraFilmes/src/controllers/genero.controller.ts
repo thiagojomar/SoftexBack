@@ -16,10 +16,7 @@ export default class GeneroController {
 
         try {
             const genero: Genero = req.body;
-            if (!genero.published) genero.published = false;
-
             const savedGenero = await generoRepository.save(genero);
-
             res.status(201).send(savedGenero);
         } catch (err) {
             res.status(500).send({
