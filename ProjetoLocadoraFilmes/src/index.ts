@@ -1,6 +1,8 @@
 import express, { Application } from "express";
 import cors, { CorsOptions } from "cors";
 import Routes from "./routes/routes";
+import "reflect-metadata";
+import { AppDataSource } from "./db/data-source";
 
 
 export default class Server {
@@ -19,3 +21,10 @@ export default class Server {
         app.use(express.urlencoded({ extended: true }));
     }
 }
+
+AppDataSource.initialize()
+    .then(() => {
+        // here you can start to work with your database
+        console.log("Testing");
+    })
+    .catch((error) => console.log(error))
